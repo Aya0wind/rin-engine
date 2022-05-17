@@ -1,0 +1,13 @@
+.FigureContainer {
+    z-index: 2;
+    position: absolute;
+    height: 550px;
+    width: calc(100% - 40px);
+    bottom: 150px;
+    left: 0;
+    justify-content: space-around;
+    display: flex;
+    margin: 20px;
+}
+
+.FigureContainerDrawer {}

@@ -1,27 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { TextBoxProps } from '../../../types/props';
 import styles from './index.module.scss'
 
 
-const TextBox = () => {
-    const text = '这是一段文字';
+const TextBox = ({ text, speed, endIcon, isOver, onOver }: TextBoxProps) => {
+    let textElementList;
+    if (isOver) {
+        textElementList = text.split('').map((e, index) => {
+            return <span
+                className={styles.TextBoxElementOver}
+                key={index}
+            >{e}</span>;
+        });
+    } else {
+        textElementList = text.split('').map((e, index) => {
+            return <span
+                className={styles.TextBoxElement}
+                key={index}
+                style={isOver ? {} : { animationDelay: String(index * speed) + 'ms' }}
+            >{e}</span>;
+        });
+    }
 
-    const [show, setshow] = useState('');
-    let counter = 0
-    useState(() => {
-        let timer = setInterval(() => {
-            if (counter === text.length) {
-                clearInterval(timer)
-                return
-            }
-            setshow((show) => show + text[counter])
-            counter += 1;
-        }, 100)
-    })
+    //const icon = <span key={text.length + 1}>{endIcon}</span>
+    //textElementList.push(icon)
     return (
-        <div className={styles.MarginContainer}>
-            <div className={styles.TextBoxContainer}>
-                {show}
-            </div>
+        < div className={styles.MarginContainer}>
+            {textElementList}
         </div>
     )
 }

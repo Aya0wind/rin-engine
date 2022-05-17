@@ -1,15 +1,46 @@
-.TextBoxContainer {
-    height: 100%;
-    width: 100%;
-    user-select: none;
-    color: greenyellow;
-    text-align: left;
+.TextBoxElement {
+    animation: TextDelayShow 700ms ease-out forwards;
+    opacity: 0;
+    font-family: "思源宋体", serif;
     font-size: 25px;
-    font-family: Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
+}
+
+
+.TextBoxElementOver {
+    opacity: 1;
+    font-family: "思源宋体", serif;
+    font-size: 25px;
+}
+
+
+@keyframes TextDelayShow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .MarginContainer {
-    cursor: default;
+    z-index: 6;
+    width: 100%;
+    user-select: none;
+    text-align: left;
+    background: linear-gradient(transparent,
+            rgba(0, 0, 0, .25) 25%,
+            rgba(0, 0, 0, .35) 75%,
+            rgba(0, 0, 0, .6)),
+        linear-gradient(90deg, transparent 0,
+            rgba(0, 0, 0, .35) 25%,
+            rgba(0, 0, 0, .35) 75%,
+            transparent);
+    color: white;
+    box-sizing: border-box;
+    animation: TextDelayShow 0.7s ease-out forwards;
+    letter-spacing: 0.2em;
+    overflow: hidden;
 
     padding: {
         left: 20px;

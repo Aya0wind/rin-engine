@@ -1,3 +1,4 @@
+import FigureContainer from '../character/container'
 import BottomUI from './bottom_ui'
 import styles from './index.module.scss'
 

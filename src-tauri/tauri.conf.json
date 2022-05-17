@@ -63,9 +63,9 @@
       {
         "fullscreen": false,
         "height": 800,
-        "resizable": true,
+        "resizable": false,
         "title": "Rin Engine",
-        "width": 1600
+        "width": 1200
       }
     ]
   }
