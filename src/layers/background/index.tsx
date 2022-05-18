@@ -9,7 +9,7 @@ const BackGround = ({ width, height }: BackGroundProps) => {
                 <Sprite
                     width={width}
                     height={height}
-                    image={'assets/background/c1.jpg'}
+                    image={'https://img0.baidu.com/it/u=3673331838,1681625713&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500'}
                     x={0}
                     y={0}
                 />

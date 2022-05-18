@@ -1,13 +1,11 @@
 .FigureContainer {
-    z-index: 2;
+    z-index: 3;
     position: absolute;
-    height: 550px;
+    height: 600px;
     width: calc(100% - 40px);
-    bottom: 150px;
-    left: 0;
-    justify-content: space-around;
+    bottom: 40px;
     display: flex;
+    // justify-content: space-around;
+    left: 0;
     margin: 20px;
 }
-
-.FigureContainerDrawer {}

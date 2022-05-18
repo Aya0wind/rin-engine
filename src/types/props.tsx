@@ -18,17 +18,10 @@ export interface RainEffectProps {
     number: number
 }
 
-export interface TextBoxProps {
-    text: string,
-    speed: number,
-    endIcon: ReactNode,
-    isOver: boolean
-    onOver?: () => void,
-}
 
 export interface FigureContainerProps {
     images: string[],
-    activeIndex: number,
+    activeIndexes: number[],
     width: number,
     height: number
 }
@@ -36,8 +29,22 @@ export interface FigureContainerProps {
 export interface FigureProps {
     image: string,
     active: boolean,
+    leftPosition: number
 }
 export interface BackGroundProps {
     width: number
     height: number
+}
+
+export interface CharacterInfoProps {
+    avatar: string,
+    name: string,
+}
+
+export interface TextBoxProps extends CharacterInfoProps {
+    text: string,
+    speed: number,
+    endIcon: ReactNode,
+    isOver: boolean
+    onOver?: () => void,
 }

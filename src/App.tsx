@@ -20,10 +20,12 @@ const AppRender = ({ }: AppRenderProps) => {
     <div className={styles.App}>
       <UI />
       <FigureContainer images={[
-        'assets/figure/m1.png',
-        'assets/figure/k1.png',
+        'https://img1.baidu.com/it/u=2838359103,4082675852&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500',
+        'https://img1.baidu.com/it/u=2838359103,4082675852&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500',
+        'https://img1.baidu.com/it/u=2838359103,4082675852&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500',
+        'https://img1.baidu.com/it/u=2838359103,4082675852&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500',
       ]}
-        activeIndex={1}
+        activeIndexes={[0, 3]}
         width={windowWidth - 36}
         height={550 + 4}
       />
