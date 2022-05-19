@@ -1,9 +1,7 @@
 import {
     MouseEventHandler,
     ReactNode
-}
-
-    from "react"
+} from "react"
 
 export interface AppRenderProps { }
 
@@ -40,11 +38,17 @@ export interface CharacterInfoProps {
     avatar: string,
     name: string,
 }
-
+export interface ClickAreaProps {
+    onClick?: () => void,
+}
 export interface TextBoxProps extends CharacterInfoProps {
     text: string,
     speed: number,
     endIcon: ReactNode,
     isOver: boolean
     onOver?: () => void,
+}
+
+export interface BottomUIProps extends TextBoxProps {
+    avatar: string,
 }

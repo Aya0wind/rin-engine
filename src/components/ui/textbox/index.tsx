@@ -14,19 +14,20 @@ const TextBox = ({ text, speed, endIcon, isOver, onOver, avatar, name }: TextBox
     })
 
     const lastElementRef = useRef<HTMLSpanElement>(null)
-    const icon = <span
+    let lastElement = <span
         ref={lastElementRef}
         className={isOver ? styles.TextBoxElementOver : styles.TextBoxElement}
-        key={text.length + 1}
-        style={isOver ? {} : { animationDelay: String((text.length) * speed) + 'ms' }}
-    >{endIcon}</span>
+        key={text.length}
+        style={isOver ? {} : { animationDelay: String(text.length * speed) + 'ms' }}
+    >{endIcon}</span>;
 
     useEffect(() => {
         lastElementRef.current.addEventListener('animationend', () => {
-            return onOver == null ? onOver() : null
+            console.log('animateend')
+            return onOver === null ? null : onOver()
         })
     })
-    textElementList.push(icon)
+    textElementList.push(lastElement)
     return (
         <div className={styles.TextBoxContainer}>
             <CharacterInfo avatar={avatar} name={name} />
@@ -34,7 +35,6 @@ const TextBox = ({ text, speed, endIcon, isOver, onOver, avatar, name }: TextBox
                 {textElementList}
             </div>
         </div>
-
     )
 }
 

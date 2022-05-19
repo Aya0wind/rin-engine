@@ -1,17 +1,26 @@
-import { convertFileSrc } from '@tauri-apps/api/tauri'
-import { eventBus } from '../../components/events'
-import FigureContainer from '../character/container'
+import { useEffect } from 'react'
+import { useStore } from 'reto'
+import { StageStates } from '../../components/states/stage_states'
+import UIStates from '../../components/states/ui_states'
+import { getLocalAsset } from '../../services/assetsLoader'
 import BottomUI from './bottom_ui'
 import styles from './index.module.scss'
 
 
 const UI = () => {
+    const uiStates = useStore(UIStates)
+
     return (
-        <div className={styles.UI} onClick={() => {
-            eventBus.emit('ui_click')
-        }}>
-            <img src={convertFileSrc('assets/rain_2.png')}></img>
-            <BottomUI />
+        <div className={styles.UI}>
+            <BottomUI
+                avatar={uiStates.avatar}
+                text={uiStates.text}
+                speed={50}
+                endIcon={uiStates.endIcon}
+                isOver={uiStates.isPerformOver}
+                name={uiStates.name}
+                onOver={() => uiStates.setPerformOver(true)}
+            />
         </div>
     )
 }

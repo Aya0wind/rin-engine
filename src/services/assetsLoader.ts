@@ -1,6 +1,6 @@
-import { convertFileSrc } from '@tauri-apps/api/tauri';
+
 
 
 export function getLocalAsset(path: string): string {
-    return convertFileSrc(path)
+    return `local://localhost:3000/${path}`
 }

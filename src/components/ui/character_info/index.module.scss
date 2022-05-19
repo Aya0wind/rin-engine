@@ -24,12 +24,12 @@
 .CharacterAvatar {
     background-size: cover;
     width: 100%;
-    height: 100%;
+    max-height: 100px;
 }
 
 .CharacterName {
     text-align: center;
     font-family: "思源宋体", serif;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
