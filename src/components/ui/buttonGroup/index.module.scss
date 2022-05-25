@@ -1,7 +1,9 @@
 .ButtonGroup {
-    height: 30px;
-    width: 40%;
-    justify-content: left;
-    display: flex;
-    margin-top: 10px;
+  z-index: 10;
+  width: 100%;
+  justify-content: right;
+  display: flex;
+  margin-top: 10px;
+  position: relative;
+  top: -50px;
 }

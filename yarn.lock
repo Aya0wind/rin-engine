@@ -1664,6 +1664,11 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@react-buddy/ide-toolbox@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.npmmirror.com/@react-buddy/ide-toolbox/-/ide-toolbox-2.1.2.tgz#bbbc67f855ff407a7e11c2304504b97e23062a21"
+  integrity sha512-EAEUpUKuQCsLKiH/B6YeARXuc3/d6FASQF0nRhxjms9ParEe6r72NkavLyIoDFMSw/d20LmdD/p0TahA4YkpNg==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.npmmirror.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"
@@ -4364,7 +4369,7 @@ eventemitter3@^4.0.0:
   resolved "https://registry.npmmirror.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
-events@^3.2.0, events@^3.3.0:
+events@^3.2.0:
   version "3.3.0"
   resolved "https://registry.npmmirror.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==

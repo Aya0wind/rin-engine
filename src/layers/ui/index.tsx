@@ -1,29 +1,28 @@
-import { useEffect } from 'react'
 import { useStore } from 'reto'
-import { StageStates } from '../../components/states/stage_states'
-import UIStates from '../../components/states/ui_states'
-import { getLocalAsset } from '../../services/assetsLoader'
+import { SettingsStates } from '../../controller/states/settings_states'
+import { StageStates } from '../../controller/states/stage_states'
+import UIStates from '../../controller/states/ui_states'
+import { UIProps } from '../../types/props'
 import BottomUI from './bottom_ui'
 import styles from './index.module.scss'
 
 
-const UI = () => {
+const UI = ({ onSayOver }: UIProps) => {
     const uiStates = useStore(UIStates)
-
+    const settingStates = useStore(SettingsStates)
     return (
         <div className={styles.UI}>
             <BottomUI
                 avatar={uiStates.avatar}
                 text={uiStates.text}
-                speed={50}
+                speed={settingStates.textSpeed}
                 endIcon={uiStates.endIcon}
                 isOver={uiStates.isPerformOver}
                 name={uiStates.name}
-                onOver={() => uiStates.setPerformOver(true)}
+                onOver={onSayOver}
             />
         </div>
     )
 }
-
 
 export default UI

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { TextBoxProps } from '../../../types/props';
 import CharacterInfo from '../character_info';
 import styles from './index.module.scss'
@@ -18,19 +18,20 @@ const TextBox = ({ text, speed, endIcon, isOver, onOver, avatar, name }: TextBox
         ref={lastElementRef}
         className={isOver ? styles.TextBoxElementOver : styles.TextBoxElement}
         key={text.length}
-        style={isOver ? {} : { animationDelay: String(text.length * speed) + 'ms' }}
+        style={isOver ? {} : { animationDelay: String((text.length - 2) * speed) + 'ms' }}
     >{endIcon}</span>;
 
     useEffect(() => {
         lastElementRef.current.addEventListener('animationend', () => {
-            console.log('animateend')
-            return onOver === null ? null : onOver()
+            return onOver ? null : onOver()
         })
     })
     textElementList.push(lastElement)
     return (
         <div className={styles.TextBoxContainer}>
-            <CharacterInfo avatar={avatar} name={name} />
+            {
+                avatar ? <CharacterInfo avatar={avatar} /> : null
+            }
             < div className={styles.TextElementContainer}>
                 {textElementList}
             </div>

@@ -1,8 +1,7 @@
-import { MouseEventHandler } from "react";
-import { FunctionButtonProps } from "../../../types/props"
+import {FunctionButtonProps} from "../../../types/props"
 import styles from "./index.module.scss";
 
-const FunctionButton = ({ name, onClick }: FunctionButtonProps) => {
+const FunctionButton = ({name, onClick}: FunctionButtonProps) => {
     return (
         <div>
             <span onClick={onClick ? onClick : null} className={styles.FunctionButton}>

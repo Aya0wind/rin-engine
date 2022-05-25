@@ -1,5 +1,6 @@
 {
-    "Lua.diagnostics.globals": [
-        "createCharacter"
-    ]
+  "Lua.diagnostics.globals": [
+    "createCharacter",
+    "loadMusic"
+  ]
 }

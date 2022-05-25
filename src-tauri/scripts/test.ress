@@ -1,0 +1,5 @@
+@import 'resource.ress'
+bgm(@music.aaa)
+@bob:say(aaaaaa)
+@bob.avatar = @avatar.bob.smile
+@alice:say(bbb)

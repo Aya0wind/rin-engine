@@ -8,7 +8,6 @@ export interface GameSettings {
 }
 
 
-
 export interface Save {
     stage: string,
     currentIndex: number,

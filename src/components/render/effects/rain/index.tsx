@@ -2,8 +2,9 @@ import { Container, useApp, useTick } from '@inlet/react-pixi';
 import './index.module.scss'
 import * as PIXI from 'pixi.js'
 import { useRef } from 'react';
-import { RainEffectProps } from '../../../types/props';
+import { RainEffectProps } from '../../../../types/props';
 import { convertFileSrc } from '@tauri-apps/api/tauri';
+
 const RainEffect = ({ number, rainSpeed }: RainEffectProps) => {
     // 动画参数
     // 设置缩放的系数

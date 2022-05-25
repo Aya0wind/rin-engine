@@ -1,5 +1,4 @@
 use std::{path::PathBuf, str::FromStr};
-
 use tauri::http::{method::Method, Request, Response, ResponseBuilder, Uri};
 
 pub fn local_request_handle(request: &Request) -> Response {

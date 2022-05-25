@@ -1,35 +1,22 @@
-.Text {
-    font-family: "思源宋体", serif;
-    font-size: 25px;
+.CharacterInfoContainer {
+  width: 15%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  margin: {
+    left: 5px;
+    right: 5px
+  }
+
+  ;
 }
 
 .CharacterInfoContainer {
-    width: 15%;
-    height: 100%;
-    flex: 1;
-    display: flex;
-
-    margin: {
-        left: 20px;
-        right: 20px
-    }
-
-    ;
-}
-
-.CharacterInfo {
-    align-self: center;
-}
-
-.CharacterAvatar {
+  img {
     background-size: cover;
     width: 100%;
     max-height: 100px;
-}
-
-.CharacterName {
-    text-align: center;
-    font-family: "思源宋体", serif;
-    color: white;
-    font-size: 20px;
+  }
 }
