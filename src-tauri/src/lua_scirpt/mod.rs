@@ -1,5 +1,7 @@
 mod bindings;
 mod commands;
-mod functions;
+mod executor;
 mod traits;
 mod types;
+
+pub use executor::EXECUTOR;

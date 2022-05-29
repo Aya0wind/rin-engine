@@ -1,3 +1,4 @@
+use mlua::{Function, Lua, Table, ToLua};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -16,14 +17,6 @@ pub struct Position {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct Stage {
-    name: String,
-    characters: Vec<Chracter>,
-    background_music: Option<Sound>,
-    commands: Vec<Command>,
-}
-
-#[derive(Debug, Deserialize, Serialize)]
 pub struct Chracter {
     name: String,
     avatar: Image,
@@ -31,7 +24,6 @@ pub struct Chracter {
     position: Position,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
-pub enum Command {
-    Say(),
+pub trait Command {
+    fn build<'a>(lua: &'a Lua, commands: &Table) -> Function<'a>;
 }

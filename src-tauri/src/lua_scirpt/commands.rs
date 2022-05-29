@@ -1,29 +1,6 @@
-use mlua::ToLua;
+use mlua::{Lua, Table};
+use serde::{Deserialize, Serialize};
 
-use super::types::Sound;
+use super::types::Command;
 
-pub struct Say {
-    character: String,
-    text: String,
-    voice: Option<Sound>,
-}
-
-pub struct Bgm {
-    music: Option<Sound>,
-}
-
-pub struct Set<T>
-where
-    for<'a> T: ToLua<'a>,
-{
-    attribute_name: String,
-    value: T,
-}
-
-pub struct PlaySound {
-    sound: Sound,
-}
-
-pub struct Branch {
-    sound: Sound,
-}
+pub struct Say {}

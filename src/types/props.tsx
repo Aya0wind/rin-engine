@@ -68,3 +68,7 @@ export interface CharacterNameProps {
 export interface UIProps {
     onSayOver?: () => void
 }
+
+export interface ControllerProps {
+    response: unknown
+}

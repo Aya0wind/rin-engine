@@ -18,14 +18,10 @@ const TextBox = ({ text, speed, endIcon, isOver, onOver, avatar, name }: TextBox
         ref={lastElementRef}
         className={isOver ? styles.TextBoxElementOver : styles.TextBoxElement}
         key={text.length}
+        onAnimationEnd={() => onOver === null ? null : onOver()}
         style={isOver ? {} : { animationDelay: String((text.length - 2) * speed) + 'ms' }}
     >{endIcon}</span>;
 
-    useEffect(() => {
-        lastElementRef.current.addEventListener('animationend', () => {
-            return onOver ? null : onOver()
-        })
-    })
     textElementList.push(lastElement)
     return (
         <div className={styles.TextBoxContainer}>

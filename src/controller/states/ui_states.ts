@@ -18,8 +18,8 @@ export interface UIStatesStore extends UIStates {
 }
 
 export function UIStates(): UIStatesStore {
-    const [text, setText] = useState('这就是我想看到的舞台！哇卡里马死！')
-    const [name, setName] = useState('萝莉泡泡')
+    const [text, setText] = useState('这是一段文字')
+    const [name, setName] = useState('【这是一个名字】')
     const [avatar, setAvatar] = useState('https://img1.baidu.com/it/u=2838359103,4082675852&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500')
     const [endIcon, setEndIcon] = useState('')
     const [isPerformOver, setPerformOver] = useState(false)

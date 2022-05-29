@@ -35,7 +35,7 @@ export function SettingsStates(): SettingsStatesStore {
     const [voiceVolume, setVoiceVolume] = useState(30)
     const [backGroundMusicVolume, setBackGroundMusicVolume] = useState(30)
     const [backGroundMusicVolumeOnVoice, setBackGroundMusicVolumeOnVoice] = useState(30)
-    const [textSpeed, seTextSpeed] = useState(30)
+    const [textSpeed, seTextSpeed] = useState(100)
     const [autoTextSpeed, setAutoTextSpeed] = useState(30)
     const [autoWaitTime, setAutoWaitTime] = useState(30)
     const [textSize, setTextSize] = useState(30)

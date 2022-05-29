@@ -1,6 +1,5 @@
 import { Sprite, Stage } from "@inlet/react-pixi"
 import { convertFileSrc } from "@tauri-apps/api/tauri"
-import { getLocalAsset } from "../../services/assetsLoader"
 import { BackGroundProps } from "../../types/props"
 
 import styles from './index.module.scss'

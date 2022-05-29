@@ -1,34 +1,22 @@
-local scene1 = {}
-
-local context = {
-    lolipop = createCharacter({
-        name = '萝莉泡泡',
-        avatar = 'avatar/bob.png',
-        figure = 'figure/bob.png',
-        position = 'left',
-        visible = true
-    }),
-    huaji = createCharacter({
-        name = '滑稽',
-        avatar = 'avatar/alice.png',
-        figure = 'figure/alice.png',
-        position = 'right',
-        visible = true
-    }),
-    bgm1 = loadMusic('music/bgm1.ogg'),
-    otherImage = loadImage('avatar/bob.png'),
-    data = {}
+local scene1 = {
+    name = '场景1'
 }
-
 function scene1.Run()
-    local lolipop = context.lolipop
-    local huaji = context.huaji
-    BGM(context.bgm1)
-    lolipop:say('谁要撅我！')
-    huaji:say('我要撅你！')
-    Menu({
-        select1 = scene1
-    })
+    local result = Commands.BGM('aaaa')
+    print(result)
+    result = Commands.Say('aaaa', 'texttext')
+    print(result)
+    result = Commands.Say('aaaa1', 'texttext1')
+    print(result)
+    result = Commands.Say('aaaa2', 'texttext2')
+    print(result)
+    result = Commands.Say('aaaa3', 'texttext3')
+    print(result)
+    result = Commands.Say('aaaa4', 'texttext4')
+    print(result)
+    result = Commands.Say('aaaa5', 'texttext5')
+    print(result)
+    test = Commands.Say('aaaa6', 'texttext6')
 end
 
 return scene1

@@ -1,43 +1,41 @@
 import { useCallback, useEffect, useState } from "react";
+import { useStore } from "reto";
 import UIStates from "../controller/states/ui_states";
 import BackGround from "../layers/background";
+import Figures from "../layers/figures";
 import UI from "../layers/ui";
 import { AppRenderProps } from "../types/props";
+import Controller from "./command_reader";
+import styles from './index.module.scss';
 import ClickArea from "./ui/click_area";
-import styles from './index.module.scss'
-import { useStore } from "reto";
-import Figures from "../layers/figures";
 
 const AppRender = ({ }: AppRenderProps) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const [windowHeight, setWindowHeight] = useState(window.innerHeight)
 
-    window.addEventListener('resize', () => {
-        setWindowWidth(window.innerWidth)
-        setWindowHeight(window.innerHeight)
-    })
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setWindowWidth(window.innerWidth)
+            setWindowHeight(window.innerHeight)
+        })
+    }, [])
     const uiStates = useStore(UIStates)
-
+    const [response, setResponse] = useState(null)
     const onUiClick = useCallback(() => {
+        console.log(uiStates.isPerformOver);
         if (uiStates.isPerformOver) {
-            uiStates.setText((t) => t + '1')
+            setResponse({})
             uiStates.setPerformOver(false)
         } else {
             uiStates.setPerformOver(true)
         }
     }, [uiStates])
 
-    useEffect(() => {
-        // async function waitForNextStage() {
-        //     await listen('eee', () => { })
-        // }
-        // waitForNextStage().then()
-    }, [])
-
     return (
         <div className={styles.AppRender}>
+            <Controller response={response} />
             <ClickArea onClick={onUiClick} />
-            <UI onSayOver={() => { uiStates.setPerformOver(true) }} />
+            <UI onSayOver={() => {uiStates.setPerformOver(true);}} />
             <Figures images={[
                 // convertFileSrc('/Users/li/vscodeprj/rin-engine/src-tauri/resource/figure/n2.png'),
                 // convertFileSrc('/Users/li/vscodeprj/rin-engine/src-tauri/resource/figure/k5.png'),
