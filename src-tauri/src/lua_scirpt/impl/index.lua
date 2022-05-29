@@ -14,8 +14,8 @@ Stages = {
 }
 
 function Stages.stage1.scenes.scene1.Run()
-    Commands.Say('萝莉泡泡', '谁要撅我！')
-    Commands.Say('滑稽', '我要撅你!')
-    Commands.Say('萝莉泡泡', '那就来吧！')
-    Commands.Say('滑稽', '现在就来！')
+    Commands.Say('角色A', '角色A说话！')
+    Commands.Say('角色B', '角色B说话！')
+    Commands.Say('角色C', '角色C说话！')
+    Commands.Say('角色D', '角色D说话！')
 end
