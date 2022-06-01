@@ -1,8 +1,11 @@
 Stages = {
     stage1 = {
         resource = {
+            backGrounds = {
+                default = 'background/c1.jpg'
+            },
             avatar = {
-
+                default = 'figure/n2.png'
             }
         },
         scenes = {
@@ -14,8 +17,10 @@ Stages = {
 }
 
 function Stages.stage1.scenes.scene1.Run()
-    Commands.Say('角色A', '角色A说话！')
-    Commands.Say('角色B', '角色B说话！')
-    Commands.Say('角色C', '角色C说话！')
-    Commands.Say('角色D', '角色D说话！')
+    Commands.BG(Stages.stage1.resource.backGrounds.default)
+    Commands.Avatar(Stages.stage1.resource.avatar.default)
+    Commands.Say('四季ナツメ', '你没事吧？')
+    Commands.Say('四季ナツメ', '角色B说话！')
+    Commands.Say('四季ナツメ', '角色C说话！')
+    Commands.Say('四季ナツメ', '角色D说话！')
 end

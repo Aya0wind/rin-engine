@@ -12,18 +12,32 @@ function Commands.Say(name, text)
     return coroutine.yield()
 end
 
-function Commands.BGM(music)
-    PushCommandStack({
-        type = 'Bgm',
-        music = music
-    })
-end
-
 function Commands.Call(scene)
     NextScene = scene
     PushScene()
     PushCommandStack({
         type = 'Call',
         name = scene.name,
+    })
+end
+
+function Commands.Avatar(picture)
+    PushCommandStack({
+        type = 'Avatar',
+        picture = picture,
+    })
+end
+
+function Commands.BGM(music)
+    PushCommandStack({
+        type = 'BGM',
+        music = music
+    })
+end
+
+function Commands.BG(picture)
+    PushCommandStack({
+        type = 'BG',
+        picture = picture
     })
 end

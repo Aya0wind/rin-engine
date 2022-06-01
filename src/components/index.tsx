@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useStore } from "reto";
+import { getLocalAsset } from "../controller/asset_loader";
 import UIStates from "../controller/states/ui_states";
 import BackGround from "../layers/background";
 import Figures from "../layers/figures";
@@ -22,7 +23,6 @@ const AppRender = ({ }: AppRenderProps) => {
     const uiStates = useStore(UIStates)
     const [response, setResponse] = useState(null)
     const onUiClick = useCallback(() => {
-        console.log(uiStates.isPerformOver);
         if (uiStates.isPerformOver) {
             setResponse({})
             uiStates.setPerformOver(false)
@@ -35,13 +35,11 @@ const AppRender = ({ }: AppRenderProps) => {
         <div className={styles.AppRender}>
             <Controller response={response} />
             <ClickArea onClick={onUiClick} />
-            <UI onSayOver={() => {uiStates.setPerformOver(true);}} />
+            <UI onSayOver={() => { uiStates.setPerformOver(true); }} />
             <Figures images={[
-                // convertFileSrc('/Users/li/vscodeprj/rin-engine/src-tauri/resource/figure/n2.png'),
-                // convertFileSrc('/Users/li/vscodeprj/rin-engine/src-tauri/resource/figure/k5.png'),
-                // 'https://img1.baidu.com/it/u=2838359103,4082675852&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500',
+                getLocalAsset('figure/n3.png')
             ]}
-                activeIndexes={[1]}
+                activeIndexes={[]}
                 width={windowWidth - 36}
                 height={windowHeight * 0.7}
             />

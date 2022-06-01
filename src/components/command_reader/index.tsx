@@ -9,15 +9,21 @@ import { StageStates } from '../../controller/states/stage_states';
 import { invoke } from '@tauri-apps/api';
 import { Command, CommandType } from '../../controller/commands';
 import { Say } from '../../controller/commands/say';
-import { emit, listen } from '@tauri-apps/api/event';
 import { ControllerProps } from '../../types/props';
+import { BG, BGComand } from '../../controller/commands/bg';
+import { Avatar, AvatarCommand } from '../../controller/commands/avatar';
 
 
-function dispatch(cmd: Command, states: States): unknown {
+function dispatch(cmd: Command, { settingsStates, uiStates, stageStates }: States): unknown {
     console.log(cmd);
+
     switch (cmd.type) {
         case CommandType.Say:
-            return Say(states.uiStates, cmd as SayCommand)
+            return Say(uiStates, cmd as SayCommand)
+        case CommandType.BG:
+            return BG(stageStates, cmd as BGComand)
+        case CommandType.Avatar:
+            return Avatar(uiStates, cmd as AvatarCommand)
     }
 }
 
@@ -34,7 +40,6 @@ const Controller = ({ response }: ControllerProps) => {
     const ui = useStore(UIStates)
     const stage = useStore(StageStates)
     const setting = useStore(SettingsStates)
-    const [isStop, setStop] = useState(false)
     useEffect(() => {
         getNextCommands(last_response).then((command) => {
             command.filter((x) => x !== null).map((cmd) => {

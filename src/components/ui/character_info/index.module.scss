@@ -5,19 +5,22 @@
   display: flex;
   align-items: center;
 
-  margin: {
-    left: 5px;
-    right: 5px
-  }
 
-  ;
 }
 
 .CharacterInfoContainer {
   img {
     background-size: cover;
     width: 100%;
-    max-height: 100px;
     overflow: visible;
+
+    margin: {
+      left: 5px;
+      right: 5px;
+      bottom: 10px;
+      top: 10px;
+    }
+
+    ;
   }
 }

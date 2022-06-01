@@ -1,8 +1,10 @@
 export enum CommandType {
     Say = 'Say',
-    SetBackGroundMusic = 'SetBackGroundMusic',
-    PlaySound = 'SaPlaySoundy',
+    SetBackGroundMusic = 'BGM',
+    PlaySound = 'PlaySound',
     LoadScene = 'LoadScene',
+    BG = 'BG',
+    Avatar = 'Avatar'
 }
 
 

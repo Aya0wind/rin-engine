@@ -21,6 +21,7 @@ export interface SettingsStatesStore extends SettingsStates {
     setVoiceVolume: React.Dispatch<React.SetStateAction<number>>,
     setBackGroundMusicVolume: React.Dispatch<React.SetStateAction<number>>,
     setBackGroundMusicVolumeOnVoice: React.Dispatch<React.SetStateAction<number>>,
+    setTextSpeed: React.Dispatch<React.SetStateAction<number>>,
     setAutoTextSpeed: React.Dispatch<React.SetStateAction<number>>,
     setAutoWaitTime: React.Dispatch<React.SetStateAction<number>>,
     setTextSize: React.Dispatch<React.SetStateAction<number>>,
@@ -35,7 +36,7 @@ export function SettingsStates(): SettingsStatesStore {
     const [voiceVolume, setVoiceVolume] = useState(30)
     const [backGroundMusicVolume, setBackGroundMusicVolume] = useState(30)
     const [backGroundMusicVolumeOnVoice, setBackGroundMusicVolumeOnVoice] = useState(30)
-    const [textSpeed, seTextSpeed] = useState(100)
+    const [textSpeed, setTextSpeed] = useState(100)
     const [autoTextSpeed, setAutoTextSpeed] = useState(30)
     const [autoWaitTime, setAutoWaitTime] = useState(30)
     const [textSize, setTextSize] = useState(30)
@@ -54,6 +55,7 @@ export function SettingsStates(): SettingsStatesStore {
         backGroundMusicVolumeOnVoice,
         setBackGroundMusicVolumeOnVoice,
         textSpeed,
+        setTextSpeed,
         autoTextSpeed,
         setAutoTextSpeed,
         autoWaitTime,

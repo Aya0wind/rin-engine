@@ -19,7 +19,7 @@ const TextBox = ({ text, speed, endIcon, isOver, onOver, avatar, name }: TextBox
         className={isOver ? styles.TextBoxElementOver : styles.TextBoxElement}
         key={text.length}
         onAnimationEnd={() => onOver === null ? null : onOver()}
-        style={isOver ? {} : { animationDelay: String((text.length - 2) * speed) + 'ms' }}
+        style={isOver ? {} : { animationDelay: String((text.length) * speed) + 'ms' }}
     >{endIcon}</span>;
 
     textElementList.push(lastElement)
