@@ -1,0 +1,11 @@
+.ButtonGroup {
+  z-index: 10;
+  height: 50%;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  display: flex;
+  margin-top: 10px;
+  position: relative;
+  top: -50px;
+}

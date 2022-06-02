@@ -1,0 +1,23 @@
+.Title {
+  color: #060606;
+  text-align: end;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 40px;
+  user-select: none;
+  cursor: default;
+
+  margin: {
+    left: 10px;
+    right: 10px;
+  }
+
+  ;
+  overflow: visible;
+  font-weight: bold;
+}

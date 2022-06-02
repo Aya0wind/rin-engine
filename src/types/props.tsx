@@ -70,5 +70,9 @@ export interface UIProps {
 }
 
 export interface ControllerProps {
-    response: unknown
+    awaker: boolean
+}
+
+export interface MainUIProps {
+
 }

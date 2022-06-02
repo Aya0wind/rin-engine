@@ -1,14 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import { useStore } from "reto";
-import { getLocalAsset } from "../controller/asset_loader";
-import UIStates from "../controller/states/ui_states";
+import { getLocalAsset } from "../util/asset_loader";
+import { States } from "../util/states";
+import UIStates from "../util/states/ui_states";
 import BackGround from "../layers/background";
 import Figures from "../layers/figures";
 import UI from "../layers/ui";
 import { AppRenderProps } from "../types/props";
-import Controller from "./command_reader";
+import Controller, { dispatch, nextCommand } from "./contoller";
 import styles from './index.module.scss';
-import ClickArea from "./ui/click_area";
+import ClickArea from "./ui/ClickArea";
 
 const AppRender = ({ }: AppRenderProps) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -20,24 +21,12 @@ const AppRender = ({ }: AppRenderProps) => {
             setWindowHeight(window.innerHeight)
         })
     }, [])
-    const uiStates = useStore(UIStates)
-    const [response, setResponse] = useState(null)
-    const onUiClick = useCallback(() => {
-        if (uiStates.isPerformOver) {
-            setResponse({})
-            uiStates.setPerformOver(false)
-        } else {
-            uiStates.setPerformOver(true)
-        }
-    }, [uiStates])
-
     return (
         <div className={styles.AppRender}>
-            <Controller response={response} />
-            <ClickArea onClick={onUiClick} />
-            <UI onSayOver={() => { uiStates.setPerformOver(true); }} />
+            <Controller />
+            <UI />
             <Figures images={[
-                getLocalAsset('figure/n3.png')
+                //getLocalAsset('figure/n3.png')
             ]}
                 activeIndexes={[]}
                 width={windowWidth - 36}

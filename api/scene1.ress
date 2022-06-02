@@ -1,0 +1,85 @@
+ //source scene1.ress
+  //脚本文件名即为场景名，可以通过名称加载
+  //init代码块在加载该场景时执行
+  init{
+  	//采用js对象的方式管理资源，方便复用和增加灵活性
+  	@script globalresources.js
+  	//在代码块中定义的全局变量可以在后续部分访问
+  	resources = {
+  			sound:{
+  				bgm1:'bgm/music1.ogg',
+  				warnSound:'sound/sound1.ogg'
+  			}
+  			avatar:{
+  				bobSmile:'avatar/bob_smile.png',
+  				bobSad:'avatar/bob_sad.png'
+  				aliceAngry:'avatar/alice_smile.png'
+  			},
+  			figure:{
+  				bobSmile:'figure/bob_smile.png'
+  				aliceSmile:'figure/alice_smile.png'
+  			},
+  			videos:{
+  				ending:'videos/ending.mp4'
+  			}
+  	}
+  	characters = {
+  			bob:Chracter('bob',
+  			resources.avater.bobSmile,
+  			resources.figure.bobSmile
+  			),
+  			alice:Chracter('alice',
+  				resources.avater.aliceSmile,
+  				resources.figure.aliceSmile
+  			),
+  	}
+  }
+  //命令由名称和参数组成，其本质是一个Javascript/Lua函数。
+  //命令仅仅是简化调用的方式，可以通过编写新的Javascript/Lua函数并注册成为一个自定义命令
+  //@开头的表示一个脚本中已定义的变量，否则为一个字符串
+  say @bob 今天又下雨了 
+  say @alice 是啊
+  
+  //更换bgm
+  bgm @resources.warnSound
+  //可以中途内嵌脚本
+  script{
+  	bob.avatar = resources.bobSad
+  }
+  //命令写法和脚本写法可以互换
+  setAvatar @bob @resources.bobSad
+  
+  //只有一行的脚本可以用#开头
+  #alice.avatar = resources.aliceAngry
+  
+  //播放下雨特效
+  sceneeffect rain
+  
+  //call指令使用参数2的转场特效，加载参数1的场景的脚本及内部的资源并转到该场景
+  //该场景执行完后会回到该行继续执行
+  call scene2 dissove
+  
+  //类似call指令，区别在于子场景执行完后不会返回
+  
+  video @resources.video.ending
+  
+  //分支跳转指令，会弹出选择按钮，并跳转到对应的场景
+  branch 选择1 scene4 选择2 scene5
+  menu{
+      
+  }
+  //对于较为复杂的分支选项，需要借助存档记录内容
+  //例如选项选择之后并不跳转，仅仅是记录，并影响后续的选项
+  scirpt{
+  	//menu函数会返回选择的选项，menu同样是一个命令
+  	let branch1  = menu('选择1'，'选择2')
+  	 //Save是一个全局存档变量，在存档时会自动将其序列化为Json存入存档
+  	 //全局存档所有存档共享，可用于实现多周目记录,CG解锁等功能
+  	Save.branch1 = branch1
+  	 //Save是一个局部存档变量，在存档时会自动将其序列化为Json存入存档
+  	 //全局存档仅在当前存档的场景中共享，可用于实现分支记录等功能
+  	LocalSave.branch1 = branch1
+     //所有未存档的变量在重开之后都会丢失！
+  }
+  //类似call，但是跳转后不会返回
+  jump scene3 dissove

@@ -1,17 +1,19 @@
 import { useStore } from 'reto'
-import { SettingsStates } from '../../controller/states/settings_states'
-import { StageStates } from '../../controller/states/stage_states'
-import UIStates from '../../controller/states/ui_states'
-import { UIProps } from '../../types/props'
-import BottomUI from './bottom_ui'
+import BottomUI from './BottomUI'
 import styles from './index.module.scss'
+import { States } from '../../util/states'
+import MainUI from './MainUI'
+import ClickArea from '../../components/ui/ClickArea'
 
 
-const UI = ({ onSayOver }: UIProps) => {
-    const uiStates = useStore(UIStates)
-    const settingStates = useStore(SettingsStates)
+const UI = () => {
+    const states = useStore(States)
+    const uiStates = states.uiStatesStore
+    const settingStates = states.settingStatesStore
+
     return (
         <div className={styles.UI}>
+            <ClickArea />
             <BottomUI
                 avatar={uiStates.avatar}
                 text={uiStates.text}
@@ -19,8 +21,9 @@ const UI = ({ onSayOver }: UIProps) => {
                 endIcon={uiStates.endIcon}
                 isOver={uiStates.isPerformOver}
                 name={uiStates.name}
-                onOver={onSayOver}
+                onOver={() => uiStates.setPerformOver(true)}
             />
+            {/* <MainUI /> */}
         </div>
     )
 }

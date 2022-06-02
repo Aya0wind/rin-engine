@@ -1,5 +1,6 @@
+-- require 'index'
 -- require 'commands'
-
+-- require 'util'
 __ResponseTemp__ = {}
 __CoContext__ = {}
 __TaskThread__ = nil

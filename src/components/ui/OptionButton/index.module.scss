@@ -1,0 +1,32 @@
+.OptionButton {
+  color: #060606;
+  max-height: 40px;
+  background: linear-gradient(to left, rgba(162, 160, 160, 0), rgba(0, 0, 0, 0.9));
+  height: 20px;
+  min-width: 30px;
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+  margin: {
+    left: 10px;
+    right: 10px;
+  }
+
+  ;
+  overflow: hidden;
+  outline: none;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #e42323;
+    color: #000000;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+}

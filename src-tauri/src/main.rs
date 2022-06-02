@@ -14,15 +14,9 @@ struct Database;
 use tauri::async_runtime::channel;
 mod local_assets_loader;
 mod lua_scirpt;
-// mod lua_scirpt;
-#[derive(serde::Serialize)]
-struct CustomResponse {
-    message: String,
-    other_val: usize,
-}
 
 #[tauri::command]
-fn next_command(response: String) -> String {
+fn next_command(response: Option<String>) -> String {
     EXECUTOR.next_coro_command(response)
 }
 

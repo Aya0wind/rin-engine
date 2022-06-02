@@ -28,10 +28,17 @@ impl Executor {
         Self { lua_state }
     }
 
-    pub fn next_coro_command(&self, response: String) -> String {
+    pub fn next_coro_command(&self, response: Option<String>) -> String {
         let lua = self.lua_state.lock().unwrap();
         {
-            lua.globals().set("__ResponseTemp__", response).unwrap();
+            lua.globals()
+                .set(
+                    "__ResponseTemp__",
+                    response.map_or(Value::Nil, |r| {
+                        mlua::Value::String(lua.create_string(&r).unwrap())
+                    }),
+                )
+                .unwrap();
             let main_thread: Thread = lua.globals().get("__MainThread__").unwrap();
             loop {
                 if let Ok(value) = main_thread.resume::<_, Option<Table>>(()) {

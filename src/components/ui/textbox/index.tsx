@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { TextBoxProps } from '../../../types/props';
-import CharacterInfo from '../character_info';
+import CharacterInfo from '../Avatar';
 import styles from './index.module.scss'
 
 
