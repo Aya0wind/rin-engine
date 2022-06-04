@@ -1,6 +1,4 @@
-import { UIStatesStore } from '../states/ui_states';
-import { StageStatesStore } from '../states/stage_states';
-import { States } from '../states';
+import { States } from '../../states';
 
 
 export interface AvatarCommand {
@@ -8,7 +6,7 @@ export interface AvatarCommand {
 }
 
 
-export function Avatar({ uiStatesStore }: States, args: AvatarCommand) {
-    uiStatesStore.setAvatar(args.picture)
+export function Avatar({ ui }: States, args: AvatarCommand) {
+    ui.setAvatar(args.picture)
 }
 

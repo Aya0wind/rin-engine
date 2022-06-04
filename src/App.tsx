@@ -1,17 +1,31 @@
 import { Provider } from "reto"
 import AppRender from "./components"
-import { States } from "./util/states"
-import { SettingsStates } from "./util/states/settings_states"
-import { StageStates } from "./util/states/stage_states"
-import UIStates from "./util/states/ui_states"
+import { States } from "./states"
+import { SettingsStates } from "./states/SettingStates"
+import { StageStates } from "./states/StageStates"
+import { BackGroundStates } from "./states/StageStates/BackGroundStates"
+import { FiguresStates } from "./states/StageStates/FigureStates"
+import { SoundStates } from "./states/StageStates/SoundStates"
+import { UIStates } from "./states/StageStates/UIStates"
+import TextUIStates from "./states/StageStates/UIStates/TextUIStates/text_ui_states"
+
+
 
 const App = () => {
     return (
-        <Provider of={UIStates} memo>
-            <Provider of={StageStates} memo>
-                <Provider of={SettingsStates} memo>
-                    <Provider of={States} memo>
-                        <AppRender />
+        <Provider of={TextUIStates} memo>
+            <Provider of={UIStates} memo>
+                <Provider of={SoundStates} memo >
+                    <Provider of={BackGroundStates} memo>
+                        <Provider of={FiguresStates} memo>
+                            <Provider of={StageStates} memo>
+                                <Provider of={SettingsStates} memo>
+                                    <Provider of={States} memo>
+                                        <AppRender />
+                                    </Provider>
+                                </Provider>
+                            </Provider>
+                        </Provider>
                     </Provider>
                 </Provider>
             </Provider>

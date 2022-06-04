@@ -17,8 +17,8 @@ Stages = {
 }
 
 function Stages.stage1.scenes.scene1.Run()
-    --Commands.BG(Stages.stage1.resource.backGrounds.default)
-    --Commands.Avatar(Stages.stage1.resource.avatar.default)
+    Commands.BG(Stages.stage1.resource.backGrounds.default)
+    Commands.Avatar(Stages.stage1.resource.avatar.default)
     Commands.Say('四季ナツメ', '你没事吧？')
     Commands.Say('四季ナツメ', '角色B说话！')
     Commands.Say('四季ナツメ', '角色C说话！')

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 
-export interface UIStates {
+export interface TextUIStates {
     text: string,
     name: string,
     avatar: string,
@@ -9,7 +9,7 @@ export interface UIStates {
     isPerformOver: boolean,
 }
 
-export interface UIStatesStore extends UIStates {
+export interface TextUIStatesStore extends TextUIStates {
     setText: React.Dispatch<React.SetStateAction<string>>,
     setName: React.Dispatch<React.SetStateAction<string>>,
     setAvatar: React.Dispatch<React.SetStateAction<string>>,
@@ -17,7 +17,7 @@ export interface UIStatesStore extends UIStates {
     setPerformOver: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export function UIStates(): UIStatesStore {
+export function TextUIStates(): TextUIStatesStore {
     const [text, setText] = useState('')
     const [name, setName] = useState('')
     const [avatar, setAvatar] = useState(null)
@@ -38,4 +38,4 @@ export function UIStates(): UIStatesStore {
 }
 
 
-export default UIStates
+export default TextUIStates

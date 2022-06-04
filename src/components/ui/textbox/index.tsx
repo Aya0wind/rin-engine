@@ -4,7 +4,9 @@ import CharacterInfo from '../Avatar';
 import styles from './index.module.scss'
 
 
-const TextBox = ({ text, speed, endIcon, isOver, onOver, avatar, name }: TextBoxProps) => {
+const TextBox = ({ text, speed, endIcon, isOver, onOver, avatar }: TextBoxProps) => {
+
+
     let textElementList = text.split('').map((e, index) => {
         return <span
             className={isOver ? styles.TextBoxElementOver : styles.TextBoxElement}

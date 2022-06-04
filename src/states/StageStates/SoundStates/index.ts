@@ -1,17 +1,17 @@
 import { useState } from "react"
-import { useStore } from "reto"
 
-export interface FiguresStatesProps {
+export interface SoundStates {
     backGroundMusic: string,
-    setBackGroundMusic: React.Dispatch<React.SetStateAction<string>>,
     backGroundMusicPlaying: boolean,
+}
+export interface SoundStatesStore extends SoundStates {
+    setBackGroundMusic: React.Dispatch<React.SetStateAction<string>>,
     setBackGroundMusicPlaying: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 
-
-export function FiguresStates(): FiguresStatesProps {
-    const [backGroundMusic, setBackGroundMusic] = useState('')
+export function SoundStates(): SoundStatesStore {
+    const [backGroundMusic, setBackGroundMusic] = useState(null)
     const [backGroundMusicPlaying, setBackGroundMusicPlaying] = useState(false)
     return {
         backGroundMusic,

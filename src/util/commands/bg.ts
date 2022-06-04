@@ -1,13 +1,11 @@
-import { States } from '../states';
-import { StageStatesStore } from '../states/stage_states';
-
+import { States } from '../../states';
 
 export interface BGComand {
     picture: string
 }
 
 
-export function BG({ stageStatesStore }: States, args: BGComand) {
-    stageStatesStore.setBackGround(args.picture)
+export function BG({ stage }: States, args: BGComand) {
+    stage.backGround.setImage(args.picture)
 }
 

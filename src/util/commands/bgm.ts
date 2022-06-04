@@ -1,7 +1,6 @@
-import { StageStatesStore } from '../states/stage_states';
+import { StageStatesStore } from '../../states/StageStates';
 import { getLocalAsset } from "../asset_loader"
-import { UIStatesStore } from "../states/ui_states"
-import { States } from '../states';
+import { States } from '../../states';
 
 
 export interface BGMComand {
@@ -9,7 +8,7 @@ export interface BGMComand {
 }
 
 
-export function BGM({ stageStatesStore }: States, args: BGMComand) {
-    stageStatesStore.setBackGroundMusic(args.music)
+export function BGM({ stage }: States, args: BGMComand) {
+    stage.sound.setBackGroundMusic(args.music)
 }
 

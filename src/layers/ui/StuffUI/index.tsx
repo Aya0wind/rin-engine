@@ -1,8 +1,8 @@
-import { LoadUIProps } from '../../../types/props'
+import { StuffUIProps } from '../../../types/props'
 import styles from './index.module.scss'
 
 
-const LoadUI = ({ }: LoadUIProps) => {
+const StuffUI = ({ }: StuffUIProps) => {
     return (
         <div className={styles.GalleryUI}>
 
@@ -10,4 +10,4 @@ const LoadUI = ({ }: LoadUIProps) => {
     )
 }
 
-export default LoadUI
+export default StuffUI

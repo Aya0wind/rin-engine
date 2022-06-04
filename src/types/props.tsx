@@ -47,7 +47,6 @@ export interface TextBoxProps extends CharacterInfoProps {
     endIcon: ReactNode,
     isOver: boolean
     onOver?: () => void,
-    name: string,
 }
 
 export interface AudioPlayerProps {
@@ -59,6 +58,32 @@ export interface BottomUIProps extends TextBoxProps {
     avatar: string,
     name: string,
 }
+export interface GameUIProps {
+
+}
+
+export interface GalleryUIProps {
+
+}
+
+
+
+export interface LoadUIProps {
+
+}
+
+
+
+export interface SaveUIProps {
+
+}
+
+
+export interface StuffUIProps {
+
+}
+
+
 
 export interface CharacterNameProps {
     name: string

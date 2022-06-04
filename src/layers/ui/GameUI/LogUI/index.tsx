@@ -1,7 +1,7 @@
-import ButtonGroup from '../../../components/ui/FunctionButtonGroup'
-import CharacterName from '../../../components/ui/ChracterName'
-import TextBox from '../../../components/ui/TextBox'
-import { BottomUIProps } from '../../../types/props'
+import ButtonGroup from '../../../../components/ui/FunctionButtonGroup'
+import CharacterName from '../../../../components/ui/ChracterName'
+import TextBox from '../../../../components/ui/TextBox'
+import { BottomUIProps } from '../../../../types/props'
 import styles from './index.module.scss'
 
 
@@ -16,7 +16,6 @@ const BottomUI = ({ text, name, endIcon, isOver, onOver, avatar, speed }: Bottom
                 isOver={isOver}
                 onOver={onOver}
                 avatar={avatar}
-                name={name}
             />
             <ButtonGroup />
         </div>

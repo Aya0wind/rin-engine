@@ -1,29 +1,28 @@
-import { useStore } from 'reto'
-import BottomUI from './BottomUI'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import GalleryUI from './GalleryUI'
+import GameUI from './GameUI'
 import styles from './index.module.scss'
-import { States } from '../../util/states'
+import LoadUI from './LoadUI'
 import MainUI from './MainUI'
-import ClickArea from '../../components/ui/ClickArea'
-
-
+import SaveUI from './SaveUI'
+import StuffUI from './StuffUI'
 const UI = () => {
-    const states = useStore(States)
-    const uiStates = states.uiStatesStore
-    const settingStates = states.settingStatesStore
-
+    const location = useLocation()
     return (
         <div className={styles.UI}>
-            <ClickArea />
-            <BottomUI
-                avatar={uiStates.avatar}
-                text={uiStates.text}
-                speed={settingStates.textSpeed}
-                endIcon={uiStates.endIcon}
-                isOver={uiStates.isPerformOver}
-                name={uiStates.name}
-                onOver={() => uiStates.setPerformOver(true)}
-            />
-            {/* <MainUI /> */}
+            <TransitionGroup>
+                <CSSTransition key={location.key} timeout={500} classNames="fade">
+                    <Routes location={location}>
+                        <Route path='/game' element={<GameUI />} />
+                        <Route path='/save' element={<SaveUI />} />
+                        <Route path='/load' element={<LoadUI />} />
+                        <Route path='/stuff' element={<StuffUI />} />
+                        <Route path='/gallery' element={<GalleryUI />} />
+                        <Route path='/' element={<MainUI />} />
+                    </Routes>
+                </CSSTransition>
+            </TransitionGroup>
         </div>
     )
 }

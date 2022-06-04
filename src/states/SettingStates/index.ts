@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { useStore } from "reto"
 
 export interface SettingsStates {
     mainVolume: number,
@@ -31,14 +30,14 @@ export interface SettingsStatesStore extends SettingsStates {
 
 
 export function SettingsStates(): SettingsStatesStore {
-    const [mainVolume, setMainVolume] = useState(30)
-    const [effectVolume, setEffectVolume] = useState(30)
-    const [voiceVolume, setVoiceVolume] = useState(30)
-    const [backGroundMusicVolume, setBackGroundMusicVolume] = useState(30)
-    const [backGroundMusicVolumeOnVoice, setBackGroundMusicVolumeOnVoice] = useState(30)
-    const [textSpeed, setTextSpeed] = useState(150)
-    const [autoTextSpeed, setAutoTextSpeed] = useState(30)
-    const [autoWaitTime, setAutoWaitTime] = useState(30)
+    const [mainVolume, setMainVolume] = useState(0.3)
+    const [effectVolume, setEffectVolume] = useState(0.3)
+    const [voiceVolume, setVoiceVolume] = useState(0.3)
+    const [backGroundMusicVolume, setBackGroundMusicVolume] = useState(0.3)
+    const [backGroundMusicVolumeOnVoice, setBackGroundMusicVolumeOnVoice] = useState(0.3)
+    const [textSpeed, setTextSpeed] = useState(50)
+    const [autoTextSpeed, setAutoTextSpeed] = useState(50)
+    const [autoWaitTime, setAutoWaitTime] = useState(1000)
     const [textSize, setTextSize] = useState(27)
     const [textOpacity, setTextOpacity] = useState(0.5)
     const [autoModeWaitVoiceOver, setAutoModeWaitVoiceOver] = useState(false)

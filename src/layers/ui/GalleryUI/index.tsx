@@ -1,11 +1,11 @@
 import ButtonGroup from '../../../components/ui/FunctionButtonGroup'
 import CharacterName from '../../../components/ui/ChracterName'
 import TextBox from '../../../components/ui/TextBox'
-import { BottomUIProps, SaveUIProps } from '../../../types/props'
+import { BottomUIProps, GalleryUIProps } from '../../../types/props'
 import styles from './index.module.scss'
 
 
-const SaveUI = ({ }: SaveUIProps) => {
+const GalleryUI = ({ }: GalleryUIProps) => {
     return (
         <div className={styles.GalleryUI}>
 
@@ -13,4 +13,4 @@ const SaveUI = ({ }: SaveUIProps) => {
     )
 }
 
-export default SaveUI
+export default GalleryUI
