@@ -1,7 +1,7 @@
 import { useStore } from 'reto';
 import { SettingsStates, SettingsStatesStore } from './SettingStates';
 import { StageStates, StageStatesStore } from './StageStates';
-import TextUIStates, { TextUIStatesStore } from './StageStates/UIStates/TextUIStates/text_ui_states';
+import TextUIStates, { TextUIStatesStore } from './UIStates/TextUIStates';
 export interface States {
     ui: TextUIStatesStore,
     stage: StageStatesStore,

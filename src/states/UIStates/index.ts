@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { useStore } from 'reto'
-import TextUIStates, { TextUIStatesStore } from './TextUIStates/text_ui_states'
+import TextUIStates, { TextUIStatesStore } from './TextUIStates'
 
 export interface UIStates {
     textUI: TextUIStatesStore

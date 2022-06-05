@@ -6,8 +6,8 @@ import { StageStates } from "./states/StageStates"
 import { BackGroundStates } from "./states/StageStates/BackGroundStates"
 import { FiguresStates } from "./states/StageStates/FigureStates"
 import { SoundStates } from "./states/StageStates/SoundStates"
-import { UIStates } from "./states/StageStates/UIStates"
-import TextUIStates from "./states/StageStates/UIStates/TextUIStates/text_ui_states"
+import { UIStates } from "./states/UIStates"
+import TextUIStates from "./states/UIStates/TextUIStates"
 
 
 

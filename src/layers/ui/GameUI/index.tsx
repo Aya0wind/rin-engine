@@ -1,16 +1,12 @@
-import ButtonGroup from '../../../components/ui/FunctionButtonGroup'
-import CharacterName from '../../../components/ui/ChracterName'
-import TextBox from '../../../components/ui/TextBox'
-import { BottomUIProps, GameUIProps } from '../../../types/props'
-import styles from './index.module.scss'
-import { useEffect } from 'react'
 import { useStore } from 'reto'
-import { States } from '../../../states'
-import { nextCommand } from '../../../util/contoller'
+import CharacterName from '../../../components/ui/ChracterName'
 import ClickArea from '../../../components/ui/ClickArea'
-import { UIStates } from '../../../states/StageStates/UIStates'
-import TextUIStates from '../../../states/StageStates/UIStates/TextUIStates/text_ui_states'
+import ButtonGroup from '../../../components/ui/FunctionButtonGroup'
+import TextBox from '../../../components/ui/TextBox'
 import { SettingsStates } from '../../../states/SettingStates'
+import TextUIStates from '../../../states/UIStates/TextUIStates'
+import { GameUIProps } from '../../../types/props'
+import styles from './index.module.scss'
 
 
 const GameUI = ({ }: GameUIProps) => {
