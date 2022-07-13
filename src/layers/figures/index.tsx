@@ -1,24 +1,26 @@
-
+import { useStore } from 'reto'
 import Figure from '../../components/render/figure'
+import { FiguresStates } from '../../states/StageStates/FiguresStates'
 import { FigureContainerProps } from '../../types/props'
 import styles from './index.module.scss'
 
-const Figures = ({ images, activeIndexes, width, height }: FigureContainerProps) => {
-    const diff = width / images.length
+const Figures = ({ width, height }: FigureContainerProps) => {
+    const states = useStore(FiguresStates)
     return (
-        <div className={styles.Figures}>
+        <div className={styles.FigureLayerContainer}>
             {
-                images.map((e, i) => {
-                    const isActive = activeIndexes.includes(i) ? true : false
+                Object.values(states.figures).map((e, i) => {
+                    //const isActive = activeIndexes.includes(i) ? true : false
                     return <Figure
                         key={i}
-                        leftPosition={i * 200}
-                        image={e}
-                        active={isActive}
-                    />
+                        source={e.source}
+                        active={false}
+                        basePosition={e.basePosition}
+                        offset={e.offset}
+                        scale={e.scale} />
                 })
             }
         </div>
     )
 }
-export default Figures
+export { Figures }

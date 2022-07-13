@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import { FigureStates } from "../states/StageStates/FiguresStates/figure"
 
 export interface AppRenderProps {
 }
@@ -16,16 +17,12 @@ export interface RainEffectProps {
 
 
 export interface FigureContainerProps {
-    images: string[],
-    activeIndexes: number[],
     width: number,
     height: number
 }
 
-export interface FigureProps {
-    image: string,
+export interface FigureProps extends FigureStates {
     active: boolean,
-    leftPosition: number
 }
 
 export interface BackGroundProps {

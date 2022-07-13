@@ -4,5 +4,4 @@
 
 ## build
 
-yarn install
-yarn build
+yarn tauri build0

@@ -11,21 +11,18 @@ import { BackGroundStates } from "../../states/StageStates/BackGroundStates"
 const BackGround = ({ width, height }: BackGroundProps) => {
     const backGroud = useStore(BackGroundStates)
     return (
-        <>
-            <Stage className={styles.BackGroundLayer} width={width} height={height}
-                options={{ antialias: true, backgroundAlpha: 0 }}>
-                {
-                    backGroud.image !== null ?
-                        <Sprite
-                            width={width}
-                            height={height}
-                            image={getLocalAsset(backGroud.image)}
-                            x={0}
-                            y={0}
-                        /> : null
-                }
-            </Stage>
-        </>)
+        <Stage className={styles.BackGroundLayer} width={width} height={height}>
+            {
+                backGroud.image !== null ?
+                    <Sprite
+                        width={width}
+                        height={height}
+                        image={getLocalAsset(backGroud.image)}
+                        x={0}
+                        y={0}
+                    /> : null
+            }
+        </Stage>)
 
 }
 export default BackGround

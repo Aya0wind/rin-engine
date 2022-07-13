@@ -13,6 +13,30 @@
   transition: all 0.6s ease;
 }
 
+.FigureLayerContainer {
+  z-index: 6;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  animation: TextDelayShow 0.5s ease-out forwards;
+  transform: translate(-50%, -50%);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-around;
+  // align-items: flex-end;
+  overflow: hidden;
+}
+
+
+.FiguresCanvas {
+  z-index: 5;
+  position: absolute;
+}
+
+
 @keyframes TextDelayShow {
   0% {
     opacity: 0;

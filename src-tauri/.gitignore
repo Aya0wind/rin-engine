@@ -3,4 +3,5 @@
 /target/
 /resource/
 WixTools
+.idea/
 Cargo.lock

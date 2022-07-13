@@ -1,6 +1,6 @@
 import { BackGroundStates, BackGroundStatesStore } from './BackGroundStates/index';
 import { useStore } from 'reto';
-import { FiguresStates, FiguresStatesStore } from './FigureStates/index';
+import { FiguresStates, FiguresStatesStore } from './FiguresStates/index';
 import { SoundStates, SoundStatesStore } from './SoundStates/index';
 
 export interface StageStates {
